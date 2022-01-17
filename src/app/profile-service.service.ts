@@ -33,9 +33,8 @@ export class ProfileServiceService {
         console.log(response);
       });
   }
-
   
-  searchGithubUser(username: string)
+  searchUser(username: string)
   {
     return this.http.get(`https://api.github.com/users/${username}? -d {"access_token": ${environment.apiKey} }`)
     .subscribe((response: any)=>{
@@ -50,17 +49,15 @@ export class ProfileServiceService {
     return this.git.asObservable();
   }
 
-  getGithubRepo()
+  getRepository()
   {
     interface RepoApiResponse
     {
       name: string;
-      description: string;
-      homepage: string;
-      language: string;
+      about: string;
       url: string;
+      language: string;
       forks: number;
-      watchers: number;
     }
     
     return this.http.get(`https://api.github.com/users/${this.username}/repos? -d {"access_token": ${environment.apiKey} }`)
@@ -82,7 +79,4 @@ export class ProfileServiceService {
     return this.gitRepo.asObservable();
 
   }
- 
-  
-
 }
