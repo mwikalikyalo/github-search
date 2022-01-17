@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  apiUrl:"https://github.com/settings/tokens/"
+  apiUrl:"https://github.com/settings/tokens/",
+  apiKey: "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",
 };
 
 /*
