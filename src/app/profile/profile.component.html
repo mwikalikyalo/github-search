@@ -4,15 +4,13 @@
       <div class="col-md-4 bg-whitde px-5">
           <div class="container">
           <div class="profile-image">
-              <img [src]="user.avatar_url" class="img-fluid" alt="img">
+              <img [src]="User.avatar_url" class="img-fluid" alt="img">
           </div>
-          <h4>{{ user.name }}</h4>
-          <p class="username">{{ user.login }}</p>
-          <h5>{{ user.bio }}</h5>
-          <p>{{ user.followers }} <span>Followers</span> {{ user.following }} <span>Following</span></p>
+          <h4>{{ User.name }}</h4>
+          <p class="username">{{ User.username }}</p>
+          <h5>{{ User.bio }}</h5>
+          <p>{{ User.followers }} <span>Followers</span> {{ User.following }} <span>Following</span></p>
           <hr>  
-          <p><i class="fa fa-map-marker" aria-hidden="true"></i> {{ user.location }}</p> 
-          <p>Joined {{ user.created_at|dateCount }}</p> 
-          <p>Updated <span>{{ user.updated_at|date }}</span></p>
+          <p>Updated <span>{{ User.update|date }}</span></p>
       </div> 
       </div>
