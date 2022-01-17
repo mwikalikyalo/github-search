@@ -4,7 +4,7 @@ export class User {
   constructor(
     public userName: string,
     public userProfile: string,
-    public followers: string,
-    public following: string){
+    public userFollowers: string,
+    public userFollowing: string){
   }
 }
