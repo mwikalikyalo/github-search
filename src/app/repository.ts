@@ -4,6 +4,6 @@ export class Repository {
       public about: string,
       public repoUrl: string,
       public language: string
-  ){
-}
+    ){
+  }
 }
