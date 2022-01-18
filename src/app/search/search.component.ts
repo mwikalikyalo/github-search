@@ -3,6 +3,7 @@ import { ProfileServiceService } from '../profile-service.service';
 import { Repository } from '../repository';
 import { User } from '../user';
 import { HttpClient } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 
 @Component({
@@ -11,6 +12,7 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./search.component.css'],
   providers: [ProfileServiceService]
 })
+
 export class SearchComponent implements OnInit {
     User!: User;
     Repository!: Repository;
