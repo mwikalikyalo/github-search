@@ -4,6 +4,7 @@ import { Repository } from '../repository';
 import { User } from '../user';
 import { HttpClient } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { environment } from 'src/environments/environment';
 
 
 @Component({
@@ -19,9 +20,21 @@ export class SearchComponent implements OnInit {
     repositories:any;
     git:any;
     
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private profileService: ProfileServiceService) { }
 
   ngOnInit(): void {
   }
-
+  searchUser(username: string){
+    return this.http.get(`https://api.github.com/users/${username}? -d {"access_token": ${environment.apiKey} }`)
+    .subscribe((response: any)=>{
+      this.git.next(response); 
+      this.searchUserRepo(username);   
+    });
+  
+  }
+  searchUserRepo(username: string) {
+    throw new Error('Method not implemented.');
+  }
+    
 }
+
