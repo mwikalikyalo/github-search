@@ -22,27 +22,25 @@
           <h4>Repositories  <span class="badge bg-primary rounded-pill" *ngIf="User.repos>0">{{ User.repos }}</span></h4>
            <div class="container-fluid repos-container" *ngIf="User.repos>0;">
               <div class="row" >
-                  <div class="col-md-5 m-1  repo-col" *ngFor="let repo of repos">
+                  <div class="col-md-5 m-1  repo-col">
                       <div class="row">
                         <div class="col-md-9 mt-auto">
-                            <h6><a href="{{ repository.url }}"> {{ repository.name }}</a></h6>
+                            <h6><a href="{{ Repository.url }}"> {{ Repository.name }}</a></h6>
                         </div>
                           <div class="col-md-3" appColor>
-                              <p><i class="fa fa-code-fork" aria-hidden="true"></i> {{ repository.forks }}</p>  
+                              <p><i class="fa fa-code-fork" aria-hidden="true"></i> {{ Repository.forks }}</p>  
                           </div>
                       </div>
                       
       
-                      <p class="about">{{ repository.about }}</p>
-                      <p><a href="{{ repository.url }}">View Site <i class="fa fa-external-link" aria-hidden="true"></i></a></p>
+                      <p class="about">{{ Repository.about }}</p>
+                      <p><a href="{{ Repository.url }}">View Site <i class="fa fa-external-link" aria-hidden="true"></i></a></p>
       
                       <div class="row">
                           <div class="col-md-5">
-                              <p><i class="fa fa-dot-circle-o text-danger" aria-hidden="true"></i> {{ repository.language }}</p>  
+                              <p><i class="fa fa-dot-circle-o text-danger" aria-hidden="true"></i> {{ Repository.language }}</p>  
                           </div>
-                      </div>
-                      
-                     
+                      </div>                 
                   </div>
       </div>
     </div>

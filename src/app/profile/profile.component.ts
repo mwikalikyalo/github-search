@@ -15,7 +15,7 @@ export class ProfileComponent implements OnInit {
     User!: User;
     Repository!: Repository;
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private profileService:ProfileServiceService) {
 
    }
 
