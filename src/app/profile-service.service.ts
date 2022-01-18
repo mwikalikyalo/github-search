@@ -1,75 +1,51 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { BehaviorSubject } from 'rxjs';
+import { User } from './user';
+import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
+import { Repository } from './repository';
 
 @Injectable({
   providedIn: 'root'
 })
 
 export class ProfileServiceService {
-  git = new BehaviorSubject<any>([]);
-  gitRepo = new BehaviorSubject<any>([]);
-  repos:any;
-  public username:string | undefined;
+  user!:User
 
-  constructor(private http:HttpClient) {   
-  }
-
-  public getUser(){
-    interface UserApiResponse{
-      name: string;
-      avatar_url: string;
-      bio: string;
-      followers: number;
-      following: number;
-      repos:number;
+  userRequest(username:string){
+    interface ApiResponse{
+      login:string,  
+      followers:number, 
+      following:number, 
+      avatar_url:string,
+      created_at:Date
     }
+    let promise: any= new Promise<void>((resolve, reject)=>{
+      this.http.get<ApiResponse>(environment.apiUrl +/users/ +username).toPromise().then(response =>{
+        this.user.name = response!.login;
+        this.user.followers = response!.followers;
+        this.user.following = response!.following;
+        this.user.avatar_url = response!.avatar_url;
+        this.user.update = response!.created_at
 
-    return this.http.get<UserApiResponse>(`https://api.github.com/users/${this.username}? -d {"access_token": ${environment.apiKey} }    `)
-      .subscribe((response: any)=>{
-        this.git.next(response);
-        console.log(response);
-      });
-  }
-  
-  searchUser(username: string){
-    return this.http.get(`https://api.github.com/users/${username}? -d {"access_token": ${environment.apiKey} }`)
-    .subscribe((response: any)=>{
-      this.git.next(response); 
-      this.searchUserRepo(username);   
-    });
-  
-  }
-  
-  getGits(){
-    return this.git.asObservable();
+      }, error=>{
+        
+        console.log("Page not found")
+      })
+
+      return promise
+
+    })
   }
 
-  getRepository(){
-    interface RepoApiResponse{
-      name: string;
-      about: string;
-      url: string;
-      language: string;
-      forks: number;
-    }
-    
-    return this.http.get(`https://api.github.com/users/${this.username}/repos? -d {"access_token": ${environment.apiKey} }`)
-    .subscribe((response: any)=>{
-      this.gitRepo.next(response);
-    });
-  }
+  repoRequest(username:string):Observable<Repository[]>{
+    return this.http.get<Repository[]>(`${environment.apiUrl}/users${username}/repos`)
+   }
 
-  searchUserRepo(username: string)
-  {
-    return this.http.get(`https://api.github.com/users/${username}/repos? -d {"access_token": ${environment.apiKey} }`)
-    .subscribe((response: any)=>{
-      this.gitRepo.next(response);
-    });
-  }
+  constructor(private http:HttpClient) {
+    this.user = new User ("","","","",0, 0, 0,new Date())
+   }
 
-  getRepos(){
-    return this.gitRepo.asObservable();
+   ngOnInit(): void {
   }
 }
