@@ -6,6 +6,7 @@ import { environment } from 'src/environments/environment';
 @Injectable({
   providedIn: 'root'
 })
+
 export class ProfileServiceService {
   git = new BehaviorSubject<any>([]);
   gitRepo = new BehaviorSubject<any>([]);
@@ -15,10 +16,8 @@ export class ProfileServiceService {
   constructor(private http:HttpClient) {   
   }
 
- public getUser()
-  {
-    interface UserApiResponse
-    {
+  public getUser(){
+    interface UserApiResponse{
       name: string;
       avatar_url: string;
       bio: string;
@@ -26,7 +25,7 @@ export class ProfileServiceService {
       following: number;
       repos:number;
     }
- 
+
     return this.http.get<UserApiResponse>(`https://api.github.com/users/${this.username}? -d {"access_token": ${environment.apiKey} }    `)
       .subscribe((response: any)=>{
         this.git.next(response);
@@ -34,8 +33,7 @@ export class ProfileServiceService {
       });
   }
   
-  searchUser(username: string)
-  {
+  searchUser(username: string){
     return this.http.get(`https://api.github.com/users/${username}? -d {"access_token": ${environment.apiKey} }`)
     .subscribe((response: any)=>{
       this.git.next(response); 
@@ -44,15 +42,12 @@ export class ProfileServiceService {
   
   }
   
-  getGits()
-  {
+  getGits(){
     return this.git.asObservable();
   }
 
-  getRepository()
-  {
-    interface RepoApiResponse
-    {
+  getRepository(){
+    interface RepoApiResponse{
       name: string;
       about: string;
       url: string;
@@ -74,9 +69,7 @@ export class ProfileServiceService {
     });
   }
 
-  getRepos()
-  {
+  getRepos(){
     return this.gitRepo.asObservable();
-
   }
 }

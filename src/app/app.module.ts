@@ -7,6 +7,7 @@ import { SearchComponent } from './search/search.component';
 import { ProfileComponent } from './profile/profile.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ProfileServiceService } from './profile-service.service';
+import { NavbarComponent } from './navbar/navbar.component';
 
 
 @NgModule({
@@ -15,6 +16,7 @@ import { ProfileServiceService } from './profile-service.service';
     HomeComponent,
     SearchComponent,
     ProfileComponent,
+    NavbarComponent,
   ],
   imports: [
     BrowserModule,

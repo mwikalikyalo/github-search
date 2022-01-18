@@ -17,7 +17,7 @@ export class SearchComponent implements OnInit {
     repositories:any;
     git:any;
     
-  constructor(private http: HttpClient, private profileService:ProfileServiceService) { }
+  constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
   }
