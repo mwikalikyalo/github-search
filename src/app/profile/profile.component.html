@@ -1,53 +1,47 @@
-<div class="container-fluid profile">
-  <app-search></app-search>
+<div class="container-fluid">
+
   <div class="row">
-      <div class="col-md-4 bg-white px-5">
-        <!--user-->
-        <div class="container">
-          <div class="profile-image">
-              <img [src]="User.avatar_url" class="img-fluid" alt="img">
-          </div>
-          <h4>{{ User.name }}</h4>
-          <p class="username">{{ User.username }}</p>
-          <h5>{{ User.bio }}</h5>
-          <p>{{ User.followers }} <span>Followers</span> {{ User.following }} <span>Following</span></p>
-          <hr>  
-          <p>Updated <span>{{ User.update|date }}</span></p>
-        </div> 
+      <div>
+          <app-search (searchForUser)= 'searchUserName($event)'></app-search>
       </div>
-
-      <!--repo-->
-      <div class=container>
-        <div class="col-md-8">
-          <h4>Repositories  <span class="badge bg-primary rounded-pill" *ngIf="User.repos>0">{{ User.repos }}</span></h4>
-           <div class="container-fluid repos-container" *ngIf="User.repos>0;">
-              <div class="row" >
-                  <div class="col-md-5 m-1  repo-col">
-                      <div class="row">
-                        <div class="col-md-9 mt-auto">
-                            <h6><a href="{{ Repository.url }}"> {{ Repository.name }}</a></h6>
-                        </div>
-                          <div class="col-md-3" appColor>
-                              <p><i class="fa fa-code-fork" aria-hidden="true"></i> {{ Repository.forks }}</p>  
-                          </div>
-                      </div>
-
-                    <div class="row">
-                      <p class="about">{{ Repository.about }}</p>
-                      <p><a href="{{ Repository.url }}">View Site <i class="fa fa-external-link" aria-hidden="true"></i></a></p>
-                    </div>
-                      
-                    <div class="row">
-                        <div class="col-md-5">
-                            <p><i class="fa fa-dot-circle-o text-danger" aria-hidden="true"></i> {{ Repository.language }}</p>  
-                        </div>
-                    </div>                 
-                  </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
   </div>
+  <div *ngIf = "user" class="mt-3">
+      <h2 class="text-center">User Details</h2>
+      <img src ="{{user.avatar_url}}">
 
+      <div class="info">
+          <div class="mt-5">
+              <p>Name: {{user.name}}</p>
+              <p>Username: {{ user.username}}</p>
+              <p>Bio: {{user.bio}}</p>
+              <p>Followers: {{user.followers}}</p>
+              <p>Following: {{user.following}}</p>
+              <p>Repos: {{user.repos}}</p>
+              <p>Date created: {{user.update|date}}</p>
+          </div>
+      </div>
+  </div>
+       
+   <table class="table container" *ngIf = "user"> 
+       <h2 class="text-center">Repos</h2>
+       <thead class="row">
+           <td class="col-md-3">Name</td>
+           <td class="col-md-3">About</td>
+           <td class="col-md-3">URL</td>
+           <td class="col-md-3">Language</td>
+           <td class="col-md-3">Forks</td>
+       </thead>
+              
+       <tr *ngFor = "let repo of repos" class="row">
+          <td class="col-md-3">{{repo.name}}</td>
+          <td class="col-md-3">{{repo.about}}</td>
+          <td class="col-md-3">{{repo.language}}</td>
+          <td class="col-md-3">{{repo.forks}}</td>
+       </tr>
+  </table>
+  <div *ngIf = 'user' class="container-fluid mt-5">
+      <app-footer></app-footer>
+  </div>
+  
+</div>
 
