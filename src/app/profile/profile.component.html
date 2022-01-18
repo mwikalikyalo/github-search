@@ -1,8 +1,9 @@
 <div class="container-fluid profile">
   <app-search></app-search>
   <div class="row">
-      <div class="col-md-4 bg-whitde px-5">
-          <div class="container">
+      <div class="col-md-4 bg-white px-5">
+        <!--user-->
+        <div class="container">
           <div class="profile-image">
               <img [src]="User.avatar_url" class="img-fluid" alt="img">
           </div>
@@ -12,5 +13,38 @@
           <p>{{ User.followers }} <span>Followers</span> {{ User.following }} <span>Following</span></p>
           <hr>  
           <p>Updated <span>{{ User.update|date }}</span></p>
-      </div> 
+        </div> 
       </div>
+
+      <!--repo-->
+      <div class=container>
+        <div class="col-md-8">
+          <h4>Repositories  <span class="badge bg-primary rounded-pill" *ngIf="User.repos>0">{{ User.repos }}</span></h4>
+           <div class="container-fluid repos-container" *ngIf="User.repos>0;">
+              <div class="row" >
+                  <div class="col-md-5 m-1  repo-col" *ngFor="let repo of repos">
+                      <div class="row">
+                        <div class="col-md-9 mt-auto">
+                            <h6><a href="{{ repository.url }}"> {{ repository.name }}</a></h6>
+                        </div>
+                          <div class="col-md-3" appColor>
+                              <p><i class="fa fa-code-fork" aria-hidden="true"></i> {{ repository.forks }}</p>  
+                          </div>
+                      </div>
+                      
+      
+                      <p class="about">{{ repository.about }}</p>
+                      <p><a href="{{ repository.url }}">View Site <i class="fa fa-external-link" aria-hidden="true"></i></a></p>
+      
+                      <div class="row">
+                          <div class="col-md-5">
+                              <p><i class="fa fa-dot-circle-o text-danger" aria-hidden="true"></i> {{ repository.language }}</p>  
+                          </div>
+                      </div>
+                      
+                     
+                  </div>
+      </div>
+    </div>
+
+
