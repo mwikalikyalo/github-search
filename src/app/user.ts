@@ -4,8 +4,8 @@ export class User {
     public username: string,
     public avatar_url: string,
     public bio: string,
-    public followers: string,
-    public following: string,
+    public followers: number,
+    public following: number,
     public repos: number,
     public update: Date){
   }
