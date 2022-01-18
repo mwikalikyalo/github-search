@@ -9,6 +9,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ProfileServiceService } from './profile-service.service';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FormsModule } from '@angular/forms';
+import { FooterComponent } from './footer/footer.component';
 
 
 @NgModule({
@@ -18,6 +19,7 @@ import { FormsModule } from '@angular/forms';
     SearchComponent,
     ProfileComponent,
     NavbarComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
