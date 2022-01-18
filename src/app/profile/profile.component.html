@@ -9,7 +9,7 @@
       <h2 class="text-center">User Details</h2>
       <img src ="{{user.avatar_url}}">
 
-      <div class="info">
+      <div class="userinfo">
           <div class="mt-5">
               <p>Name: {{user.name}}</p>
               <p>Username: {{ user.username}}</p>
@@ -40,7 +40,7 @@
           <td class="col-md-3">{{repo.forks}}</td>
        </tr>
   </table>
-  <div *ngIf = 'user' class="container-fluid mt-5">
+  <div class="container-fluid mt-5" *ngIf = 'user'>
       <app-footer></app-footer>
   </div>
   
