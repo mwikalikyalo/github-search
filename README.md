@@ -2,26 +2,68 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.1.
 
-## Development server
+## Description.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+This is a Github Search application that searches for user and displays their profile info using the Github API.
 
-## Code scaffolding
+This is a website where users may enter a GitHub username into a form, submit it, and see names and descriptions of that person's public repositories.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+GitHub API was used to retrieve this information. This API allows 5,000 requests per hour with an API key, but only 60 requests per hour without one.
 
-## Build
+## Prerequisites.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+To work with GitSearch you need to have some few prerequisites.
 
-## Running unit tests
+This include the following mentioned however below however if you dont have the set below.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+* Node.js
 
-## Running end-to-end tests
+* Angular-JS framework
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+* Watchman
 
-## Further help
+* Typescript
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+* Terminal
+
+
+## Setup/Installation.
+
+To work With Github Search;
+1. You will need Internet connection.
+
+2. You will also need a Webpage URL to load in URL's:
+
+3. To get to use GitSearch fist you need to get to the Github-API-Search--Update-Angular-cli-7 repository.
+
+* Link:-> 
+
+4. From there you can access GitSearch.
+
+5. Clone the project.
+
+6. Once you done with cloning and project is on your device; get into project folder (cd into project).
+
+7. On your bash terminal Run the command:-
+* ng serve
+
+8. Open your prefered web browser and load it on local host:
+  * http://localhost:4200/
+9. This will load for you Github Search as long as your requirements are satisfied.
+
+## Technologies
+* Angular CLI
+* Typescript
+* JavaScript
+* HTML
+* CSS
+* Bootstrap
+
+## Support and contact
+Contact me via winifred.kyalo@student.moringaschool.com
+
+### License 
+MIT License.
+
+### Copyright.
+Copyright, 2022. Winifred Mwikali Kyalo
