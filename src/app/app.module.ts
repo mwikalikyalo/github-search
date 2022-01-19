@@ -11,6 +11,7 @@ import { ProfileServiceService } from './profile-service.service';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FormsModule } from '@angular/forms';
 import { FooterComponent } from './footer/footer.component';
+import { DatePipe } from './date.pipe';
 
 
 @NgModule({
@@ -21,6 +22,7 @@ import { FooterComponent } from './footer/footer.component';
     ProfileComponent,
     NavbarComponent,
     FooterComponent,
+    DatePipe,
   ],
   imports: [
     BrowserModule,

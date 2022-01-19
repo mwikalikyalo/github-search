@@ -3,6 +3,7 @@ import { ProfileServiceService } from '../profile-service.service';
 import { Repository } from '../repository';
 import { User } from '../user';
 
+
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
@@ -14,7 +15,7 @@ export class ProfileComponent implements OnInit {
   repos!:Repository[];
   users_Request: any;
 
-  searchUserName(username:string){
+  searchUserName(username:string): void{
     this.users_Request.userRequest(username);
     this.user = this.users_Request.user;
     this.users_Request.repoRequest(username).subscribe((data:any)=>{
