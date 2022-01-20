@@ -5,32 +5,31 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { SearchComponent } from './search/search.component';
-import { ProfileComponent } from './profile/profile.component';
 import { HttpClientModule } from '@angular/common/http';
-import { ProfileServiceService } from './profile-service.service';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FormsModule } from '@angular/forms';
 import { FooterComponent } from './footer/footer.component';
 import { DatePipe } from './date.pipe';
-
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    SearchComponent,
-    ProfileComponent,
     NavbarComponent,
+    SearchComponent,
     FooterComponent,
     DatePipe,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+
   ],
-  providers: [ProfileServiceService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
