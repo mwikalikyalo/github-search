@@ -26,7 +26,6 @@ export class ProfileComponent implements OnInit {
 
   constructor( private profileservice:ProfileServiceService) { }
 
-
   ngOnInit(): void {}
 
 }

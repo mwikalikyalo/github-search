@@ -1,0 +1,11 @@
+.intro{
+  font-size: 3em;
+  font-weight: 800;
+  text-align: center;
+}
+h1{
+  font-size: 2em;
+}
+.home{
+  background-image: url(/home/moringa/Documents/moringa/gitsearch/src/assets);
+}
