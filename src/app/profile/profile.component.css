@@ -5,6 +5,14 @@ img{
   margin: 10px;
   border-radius: 1rem;
 }
+.user{
+  display: flex;
+  justify-content: center; 
+  font-size: large;
+  background-color: whitesmoke;
+  border-radius: 5px;
+  padding: 5px;
+}
 .display{
   display: flex;
   justify-content: space-around;
@@ -12,6 +20,7 @@ img{
 .user-details{
   background-color: white;
   padding: 5%;
+
 }
 thead{
   background-color: #14213d;
@@ -24,9 +33,5 @@ table{
   clear: both;
   color: #ff6d00;
 }
-.info{
-  display: flex;
-  justify-content: center; 
-  font-size: large;
-}
+
 

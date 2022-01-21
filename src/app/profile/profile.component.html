@@ -1,16 +1,14 @@
 <div class="container-fluid">
 
   <div class="row">
-      <div>
           <app-search (searchForUser)="searchUserName($event)"></app-search>
-      </div>
   </div>
 
   <div *ngIf="user" class="user-details">
       <h2 class="text-center">User Details</h2>
       <img src ="{{user.avatar_url}}">
 
-      <div class="info">
+      <div class="user">
           <div class="mt-5">
               <p>Name: {{user.username}}</p>
               <p>Profile: {{user.bio}}</p>
@@ -31,9 +29,9 @@
        </thead>
               
        <tr *ngFor = "let repo of repos" appApphover class="row">
-          <td class="col-md-3">{{repo.name}}</td>
-          <td class="col-md-3">{{repo.language}}</td>
-          <td class="col-md-3">{{repo.url}}</td>  
+          <td class="col-md-3"><a href="repo.link">{{repo.name}}</a></td>
+          <td class="col-md-3"><a href="repo.link">{{repo.langauge}}</a></td>
+          <td class="col-md-3"> <a href="repo.link">{{repo.url}}</a></td>  
        </tr>
   </table>
   <div *ngIf = 'user' class="container-fluid mt-5">
