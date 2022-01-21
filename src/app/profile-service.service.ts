@@ -14,19 +14,23 @@ export class ProfileServiceService {
 
   userRequest(username:string){
     interface ApiResponse{
-      login:string,  
+      name:string, 
+      username:string,
+      avatar_url:string,
+      bio:string, 
       followers:number, 
       following:number, 
-      avatar_url:string,
-      created_at:Date
+      update:Date
     }
     let promise: any= new Promise<void>((resolve, reject)=>{
       this.http.get<ApiResponse>(environment.apiUrl +/users/ +username).toPromise().then(response =>{
-        this.user.name = response!.login;
+        this.user.name = response!.name;
+        this.user.username= response!.username;
+        this.user.bio= response!.bio;
+        this.user.avatar_url = response!.avatar_url;
         this.user.followers = response!.followers;
         this.user.following = response!.following;
-        this.user.avatar_url = response!.avatar_url;
-        this.user.update = response!.created_at
+        this.user.update = response!.update;
 
       }, error=>{
         

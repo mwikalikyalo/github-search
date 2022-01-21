@@ -1,4 +1,6 @@
 import { Component, OnInit, Output, EventEmitter} from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { ProfileServiceService } from '../profile-service.service';
 import { User } from '../user';
 
 @Component({
@@ -8,7 +10,7 @@ import { User } from '../user';
 })
 export class SearchComponent implements OnInit {
 
-  constructor() { }
+  constructor(private profileservice:ProfileServiceService) { }
   searchedUser = new User("","","","",0,0,0,new Date());
 
   @Output () searchForUser:EventEmitter<string> = new EventEmitter<string>();
