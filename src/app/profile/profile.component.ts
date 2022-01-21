@@ -11,22 +11,23 @@ import { Repository } from '../repository';
 
 export class ProfileComponent implements OnInit {
 
-  user: any = User;
-  repos: any = Repository;
-  users_Request: any;
+  user:any;
+  repos:any;
 
-  searchUserName(username:string){
-    this.users_Request.userRequest(username);
-    this.user = this.users_Request.user;
-    this.users_Request.repoRequest(username).subscribe((data: typeof Repository)=>{
-      this.repos = data
-    })
-    
-  }
   constructor(private profileservice:ProfileServiceService) { }
 
   ngOnInit(): void {
   }
 
+  searchUserName(username:string){
+    this.profileservice.userRequest(username)
+    this.profileservice.getUser(username).subscribe(data=> {
+      this.user=data})
+    console.log(this.user)
+    this.profileservice.repoRequest(username).subscribe((data)=>{
+      this.repos = data
+    })
+    
+  }
 }
 

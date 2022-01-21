@@ -10,7 +10,6 @@ import { FormsModule } from '@angular/forms';
 import { SearchComponent } from './search/search.component';
 import { ProfileComponent } from './profile/profile.component';
 
-
 @NgModule({
   declarations: [
     AppComponent,

@@ -2,10 +2,11 @@
 
   <div class="row">
       <div>
-          <app-search (searchForUser)= 'searchUserName($event)'></app-search>
+          <app-search (searchForUser)="searchUserName($event)"></app-search>
       </div>
   </div>
-  <div  *ngIf = "user" class="mt-3">
+
+  <div  *ngIf="user" class="mt-3">
       <h2 class="text-center">User Details</h2>
       <img src ="{{user.avatar_url}}">
 
