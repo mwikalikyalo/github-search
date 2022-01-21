@@ -36,8 +36,6 @@ To work With Github Search;
 
 3. To get to use GitSearch fist you need to get to the Github-API-Search--Update-Angular-cli-7 repository.
 
-* Link:-> 
-
 4. From there you can access GitSearch.
 
 5. Clone the project.
