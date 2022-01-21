@@ -15,3 +15,9 @@ nav > a{
 ul>li{
   color: white;
 }
+a{
+  color: white;
+}
+a:hover{
+  color: #24A19C;
+}
