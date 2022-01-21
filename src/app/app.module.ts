@@ -9,6 +9,8 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { FormsModule } from '@angular/forms';
 import { SearchComponent } from './search/search.component';
 import { ProfileComponent } from './profile/profile.component';
+import { DatePipe } from './date.pipe';
+import { ApphoverDirective } from './apphover.directive';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { ProfileComponent } from './profile/profile.component';
     NavbarComponent,
     HomeComponent,
     SearchComponent,
-    ProfileComponent
+    ProfileComponent,
+    DatePipe,
+    ApphoverDirective
   ],
   imports: [
     BrowserModule,

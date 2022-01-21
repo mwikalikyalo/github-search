@@ -1,6 +1,6 @@
 nav > a{
   background-color: #393c40;
-  color: #24A19C;
+  color: #ff6d00;
 }
 .navbar{
   display: flex;
@@ -19,6 +19,6 @@ a{
   color: white;
 }
 a:hover{
-  color: #24A19C;
+  color: #ff6d00;
   text-decoration: none;
 }

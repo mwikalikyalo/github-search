@@ -6,7 +6,7 @@
       </div>
   </div>
 
-  <div  *ngIf="user" class="mt-3">
+  <div *ngIf="user" class="user-details">
       <h2 class="text-center">User Details</h2>
       <img src ="{{user.avatar_url}}">
 
@@ -17,7 +17,7 @@
               <p>Followers: {{user.followers}}</p>
               <p>Following: {{user.following}}</p>
               <p>Repositories: {{user.following}}</p>
-              <p>Date created: {{user.update|date}</p>
+              <p>Date created: {{user.update|date}}</p>
           </div>
       </div>
   </div>
@@ -26,17 +26,14 @@
        <h2 class="text-center">Repos</h2>
        <thead class="row">
            <td class="col-md-3">Name</td>
-           <td class="col-md-3">Description</td>
            <td class="col-md-3">Language</td>
-           <td class="col-md-3">Forks</td>
+           <td class="col-md-3">Url</td>
        </thead>
               
-       <tr *ngFor = "let repo of repos" appHover class="row">
+       <tr *ngFor = "let repo of repos" appApphover class="row">
           <td class="col-md-3">{{repo.name}}</td>
-          <td class="col-md-3">{{repo.about}}</td>
-          <td class="col-md-3">{{repo.url}}</td>
           <td class="col-md-3">{{repo.language}}</td>
-          <td class="col-md-3">{{repo.forks}}</td>
+          <td class="col-md-3">{{repo.url}}</td>  
        </tr>
   </table>
   <div *ngIf = 'user' class="container-fluid mt-5">

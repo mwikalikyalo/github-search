@@ -1,0 +1,32 @@
+img{
+  width: 45%;
+  height: 350px;
+  float: left;
+  margin: 10px;
+  border-radius: 1rem;
+}
+.display{
+  display: flex;
+  justify-content: space-around;
+}
+.user-details{
+  background-color: white;
+  padding: 5%;
+}
+thead{
+  background-color: #14213d;
+  height: 70px;
+  padding: 5px;
+  font-weight: bold;
+}
+table{
+  font-size: larger;
+  clear: both;
+  color: #ff6d00;
+}
+.info{
+  display: flex;
+  justify-content: center; 
+  font-size: large;
+}
+

@@ -27,7 +27,6 @@ export class ProfileServiceService {
   userRequest(username:any){
     return this.http.get<ApiResponse>(environment.apiUrl +/users/ +username)  
   }
-
   repoRequest(username:string):Observable<Repository[]>{
     return this.http.get<Repository[]>(environment.apiUrl+/users/ + username + "/repos")
    }

@@ -16,7 +16,6 @@ export class SearchComponent implements OnInit {
   @Output () searchForUser:EventEmitter<string> = new EventEmitter();
 
   searchUser(){
-    console.log("Winnie");
     this.searchForUser.emit(this.username)
 
     console.log("check username",this.username);
